@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="crm_lead_form_inherited_custom" model="ir.ui.view">
+            <field name="name">crm.lead.form.inherited.custom</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lang_id']" position="before">
+                    <field name="linkedin"/>
+                </xpath>
+                <xpath expr="//field[@name='lang_id']" position="before">
+                    <field name="facebook"/>
+                </xpath>
+                <xpath expr="//field[@name='lang_id']" position="before">
+                    <field name="instagram"/>
+                </xpath>
+                <xpath expr="//field[@name='lang_id']" position="before">
+                    <field name="twitter"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="res_partner_form_inherited_custom" model="ir.ui.view">
+            <field name="name">res.partner.form.inherited.custom</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='website']" position="after">
+                    <field name="twitter"/>
+                </xpath>
+                <xpath expr="//field[@name='website']" position="after">
+                    <field name="instagram"/>
+                </xpath>
+                <xpath expr="//field[@name='website']" position="after">
+                    <field name="facebook"/>
+                </xpath>
+                <xpath expr="//field[@name='website']" position="after">
+                    <field name="linkedin"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
